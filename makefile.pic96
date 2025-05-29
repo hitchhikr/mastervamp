@@ -1,0 +1,38 @@
+TARGET = masv
+OBJS = src/main.o src/emu/loadrom.o src/emu/system.o src/emu/sms.o src/emu/vdp.o src/emu/tms.o src/emu/render.o src/emu/pio.o \
+       src/emu/prefs.o src/emu/sn76489.o src/emu/sound.o src/emu/cpu/z80.o src/emu/cpu/memz80.o src/asm.o
+CFLAGS = -Ofast -w -m68020 -m68881 -noixemul -foptimize-register-move -funroll-all-loops \
+         -fexpensive-optimizations -fomit-frame-pointer
+LDFLAGS = -s -O -noixemul
+
+CC = m68k-amigaos-gcc
+CPP = m68k-amigaos-g++
+LD = m68k-amigaos-ld
+AS = vasmm68k_mot_win32
+RM = rm
+AR = m68k-amigaos-ar
+RANLIB = m68k-amigaos-ranlib
+
+.PHONY: all
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $(OBJS)
+
+%.o: %.S
+	$(AS) $(CC_INCLUDE) -nomsg=2050 -nomsg=2054 -nomsg=2052 -devpac -Fhunk -m68020 -quiet -o $@ $<
+
+%.o: %.s
+	$(AS) $(CC_INCLUDE) -nomsg=2050 -nomsg=2054 -nomsg=2052 -devpac -Fhunk -m68020 -quiet -o $@ $<
+
+%.o: %.c
+	$(CC) $(CC_INCLUDE) $(CFLAGS) -c -o $@ $<
+
+%.o: %.cpp
+	$(CPP) $(CC_INCLUDE) $(CFLAGS) -c -o $@ $<
+
+.PHONY : clean
+
+clean :
+	-$(RM) -f $(OBJS)

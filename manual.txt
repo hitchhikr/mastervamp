@@ -1,0 +1,53 @@
+MasterVamp v0.7 - This is BETA software.
+
+An emulator for
+
+- SEGA Master System
+- SEGA Game Gear
+- SEGA SG-1000
+- CBS ColecoVision
+
+consoles.
+
+Written by Franck 'hitchhikr' Charlet.
+Losely based on SMSPlus by Charles Mac Donald.
+
+Usage: masv [N] [S] <romname.sms|.gg|.sg|.col>
+
+  Optional N: emulate an "NTSC" console (emulator uses "PAL" region otherwise)
+              (GameGear emulation always uses "NTSC" region).
+  Optional S: disable the sprites/line limit (to remove flickering).
+
+Joypad mapping:
+---------------
+
+  Vampire           GameGear
+  --------------------------
+
+  RED/A BUTTON      BUTTON 1
+  BLUE/B BUTTON     BUTTON 2
+  GREEN/X BUTTON    START BUTTON
+  LEFT PAD          LEFT PAD
+  RIGHT PAD         RIGHT PAD
+  UP PAD            UP PAD
+  DOWN PAD          DOWN PAD
+
+  Vampire           Master System/SG-1000/ColecoVision
+  ----------------------------------------------------
+
+  RED/A button      BUTTON 1/START BUTTON
+  BLUE/B button     BUTTON 2
+  GREEN/X button    PAUSE CONSOLE
+  YELLOW/Y button   RESET CONSOLE (Only on Master System)
+  LEFT PAD          LEFT PAD
+  RIGHT PAD         RIGHT PAD
+  UP PAD            UP PAD
+  DOWN PAD          DOWN PAD
+
+Keys mapping:
+-------------
+
+  SPACEBAR          START BUTTON
+  P                 PAUSE CONSOLE
+  1 to =            ColecoVision KEYPAD
+  ESCAPE            Exit emulator

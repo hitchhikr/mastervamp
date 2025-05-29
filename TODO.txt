@@ -1,0 +1,2 @@
+- Fix the CRC32 checksums (if they don't work).
+- Handle savestates (F1-F10 to save and shift+F1-F10 to restore).
