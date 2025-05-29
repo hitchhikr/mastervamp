@@ -122,7 +122,7 @@ int main(int argc, char **argv)
 
 #endif
 
-    printf("MasterVamp v0.7 BETA Version\n");
+    printf("MasterVamp v0.7 BETA\n");
     printf("A Master System/Game Gear/Coleco Vision/Sg1000 emulator.\n");
     printf("Written by Franck 'hitchhikr' Charlet.\n\n");
 

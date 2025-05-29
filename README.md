@@ -5,6 +5,6 @@ MasterVamp is an emulator of
 - SEGA SG-1000
 - CBS ColecoVision
 
-consoles for the Apollo Vampire cards.
+consoles for the Apollo Vampire cards, check manual.txt for some hints.
 
 This is BETA software.
